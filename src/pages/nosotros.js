@@ -4,7 +4,7 @@ import Layout from "@/components/Layout";
 const Nosotros = () => {
   return (
     <Layout pagina={Nosotros}>
-      <h1 className="heading">Desde Nosotros</h1>
+      <h1 className="heading">Este es el about</h1>
     </Layout>
   );
 };
