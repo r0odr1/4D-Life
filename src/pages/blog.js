@@ -1,10 +1,19 @@
 import Layout from "@/components/Layout";
+import Entrada from "@/components/Entrada";
 
 const Blog = ({ entradas }) => {
   console.log(entradas);
   return (
     <Layout pagina="Blog">
-      <h1 className="heading">Este es el blog</h1>
+      <main className="contenedor">
+        <h2 className="heading">Este es el blog</h2>
+
+        <div>
+          {entradas.map((entrada) => (
+            <Entrada key={entrada.id} entrada={entrada} />
+          ))}
+        </div>
+      </main>
     </Layout>
   );
 };
@@ -14,11 +23,9 @@ export async function getStaticProps() {
   const respuesta = await fetch(url);
   const entradas = await respuesta.json();
 
-  console.log(entradas);
-
   return {
     props: {
-      entradas,
+      entradas: entradas.data,
     },
   };
 }
