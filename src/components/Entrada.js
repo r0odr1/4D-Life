@@ -1,8 +1,14 @@
-const Entrada = () => {
-  // const { titulo, resumen, imagen, published_at, id } = entrada;
+const Entrada = ({ entrada }) => {
+  const { id, titulo } = entrada;
+
+  console.log("entrada", id, titulo);
+
   return (
     <article>
-      <h1>Desde Entrada.js</h1>
+      <div>
+        <h1>{id}</h1>
+        <p>{titulo}</p>
+      </div>
     </article>
   );
 };
