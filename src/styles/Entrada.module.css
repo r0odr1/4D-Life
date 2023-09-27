@@ -1,0 +1,15 @@
+.contenido {
+  padding: 2rem;
+}
+
+.contenido h3 {
+  font-weight: 400;
+  font-size: 2.8rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.fecha {
+  font-size: 1.6rem;
+  color: (--primary);
+}

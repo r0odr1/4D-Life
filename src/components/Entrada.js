@@ -1,13 +1,25 @@
-const Entrada = ({ entrada }) => {
-  const { id, titulo } = entrada;
+import Link from "next/link";
+import Image from "next/image";
+import { formatearFecha } from "@/helpers";
+import styles from "../styles/Entrada.module.css";
 
-  console.log("entrada", id, titulo);
+const Entrada = ({ entrada }) => {
+  const { id, titulo, publishedAt, resumen, imagen } = entrada;
 
   return (
     <article>
-      <div>
-        <h1>{id}</h1>
-        <p>{titulo}</p>
+      <Image
+        layout="responsive"
+        src={imagen.data.attributes.url}
+        width={800}
+        height={600}
+        alt={`imagen blog ${titulo}`}
+      />
+      <div className={styles.contenido}>
+        <h3>{titulo}</h3>
+        <p className={styles.fecha}>{formatearFecha(publishedAt)}</p>
+        <p>{resumen}</p>
+        <Link href={`/blog/${id}`}>Leer Entrada</Link>
       </div>
     </article>
   );

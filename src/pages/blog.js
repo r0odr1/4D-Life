@@ -2,7 +2,6 @@ import Layout from "@/components/Layout";
 import Entrada from "@/components/Entrada";
 
 const Blog = ({ entradas }) => {
-  console.log("BLOG", entradas);
   return (
     <Layout pagina="Blog">
       <main className="contenedor">
@@ -21,7 +20,7 @@ const Blog = ({ entradas }) => {
 };
 
 export async function getStaticProps() {
-  const url = "http://localhost:1337/api/blogs";
+  const url = "http://localhost:1337/api/blogs?populate=*";
   const respuesta = await fetch(url);
   const entradas = await respuesta.json();
 
