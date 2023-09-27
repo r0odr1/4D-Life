@@ -18,8 +18,10 @@ const Entrada = ({ entrada }) => {
       <div className={styles.contenido}>
         <h3>{titulo}</h3>
         <p className={styles.fecha}>{formatearFecha(publishedAt)}</p>
-        <p>{resumen}</p>
-        <Link href={`/blog/${id}`}>Leer Entrada</Link>
+        <p className={styles.resumen}>{resumen}</p>
+        <Link href={`/blog/${id}`} className={styles.enlace}>
+          Leer Entrada
+        </Link>
       </div>
     </article>
   );

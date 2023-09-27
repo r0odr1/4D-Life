@@ -11,5 +11,32 @@
 
 .fecha {
   font-size: 1.6rem;
-  color: (--primary);
+  color: var(--primary);
+}
+
+.resumen {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.enlace {
+  margin-top: 2rem;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--black);
+  border: 2px solid var(--primary);
+  padding: 1rem 5rem;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+}
+
+.enlace:hover {
+  background-color: var(--primary);
+  color: var(--white);
 }
