@@ -3,6 +3,7 @@ import Entrada from "@/components/Entrada";
 import styles from "../styles/Blog.module.css";
 
 const Blog = ({ entradas }) => {
+  const url = `${process.env.NEXT_PUBLIC_API_URL}/api/blogs?populate=*`;
   return (
     <Layout pagina="Blog">
       <main className="contenedor">
@@ -21,7 +22,7 @@ const Blog = ({ entradas }) => {
 };
 
 export async function getStaticProps() {
-  const url = "http://localhost:1337/api/blogs?populate=*";
+  const url = `${process.env.API_URL}/api/blogs?populate=*`;
   const respuesta = await fetch(url);
   const entradas = await respuesta.json();
 

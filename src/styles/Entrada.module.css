@@ -1,3 +1,8 @@
+.entrada {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
 .contenido {
   padding: 2rem;
 }
@@ -39,4 +44,8 @@
 .enlace:hover {
   background-color: var(--primary);
   color: var(--white);
+}
+
+.texto {
+  white-space: pre-wrap;
 }
