@@ -1,9 +1,34 @@
 import Layout from "@/components/Layout";
+import Buzo from "@/components/Buzo";
+import styles from "../styles/Listado.module.css";
 
-export default function Home() {
+export default function Home({ buzos }) {
   return (
     <Layout pagina="Inicio">
-      <h1>Este es el Inicio</h1>
+      <main className="contenedor">
+        <h1 className="heading">Nuestra Coleccion</h1>
+        <div className={styles.listado}>
+          {buzos.map((buzo) => {
+            const { id, attributes } = buzo;
+
+            return <Buzo key={id} buzo={{ ...attributes, id }} />;
+          })}
+        </div>
+      </main>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const url = `${process.env.API_URL}/api/buzos?populate=*`;
+  const respuesta = await fetch(url);
+  const buzos = await respuesta.json();
+
+  console.log(buzos);
+
+  return {
+    props: {
+      buzos: buzos.data,
+    },
+  };
 }
