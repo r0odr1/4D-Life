@@ -1,0 +1,53 @@
+.header {
+  background-image: linear-gradient(
+      to right,
+      rgb(0 0 0 / 0.8),
+      rgb(0 0 0 / 0.7)
+    ),
+    url(../../public/img/buzo-gris-4d.png);
+  padding: 5rem 0;
+  background-size: cover;
+  background-position: 50%;
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .toolbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.navigation {
+  margin-top: 5rem;
+  display: flex;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .navigation {
+    margin-top: 0;
+  }
+}
+
+.navigation a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  border-radius: 2rem;
+}
+
+.navigation a:hover {
+  background-color: var(--primary);
+  border-radius: 2rem;
+}

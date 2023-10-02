@@ -1,0 +1,43 @@
+.footer {
+  background-color: var(--black);
+  padding: 5rem 0;
+  margin-top: 5rem;
+}
+
+@media (min-width: 768px) {
+  .contenido {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .navigation {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+.navigation a {
+  font-size: 2.8rem;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.navigation a:hover {
+  color: var(--primary);
+}
+
+.copy {
+  font-size: 2.8rem;
+  color: var(--white);
+  font-weight: 700;
+  text-align: center;
+}
