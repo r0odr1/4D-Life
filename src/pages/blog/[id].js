@@ -4,7 +4,6 @@ import { formatearFecha } from "@/helpers";
 import styles from "../../styles/Entrada.module.css";
 
 const EntradaBlog = ({ entrada }) => {
-  console.log(entrada.attributes);
   const { titulo, imagen, publishedAt, contenido } = entrada.attributes;
   return (
     <>

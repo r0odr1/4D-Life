@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "../styles/Buzo.module.css";
 
 const Buzo = ({ buzo }) => {
-  const { descripcion, imagen, nombre, precio, url } = buzo.attributes;
+  const { descripcion, imagen, nombre, precio, id } = buzo;
   return (
     <div className={styles.buzo}>
       <Image
@@ -17,7 +17,7 @@ const Buzo = ({ buzo }) => {
         <h3>{nombre}</h3>
         <p className={styles.descripcion}>{descripcion}</p>
         <p className={styles.precio}>${precio}</p>
-        <Link href={`/buzos/${url}`} className={styles.enlace}>
+        <Link href={`/buzos/${id}`} className={styles.enlace}>
           Ver Producto
         </Link>
       </div>
