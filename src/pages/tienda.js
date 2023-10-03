@@ -24,8 +24,6 @@ export async function getStaticProps() {
   const respuesta = await fetch(url);
   const buzos = await respuesta.json();
 
-  console.log(buzos);
-
   return {
     props: {
       buzos: buzos.data,

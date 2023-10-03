@@ -1,8 +1,9 @@
 import Layout from "@/components/Layout";
 import Buzo from "@/components/Buzo";
 import styles from "../styles/Listado.module.css";
+import Bloque from "@/components/Bloque";
 
-export default function Home({ buzos }) {
+export default function Home({ buzos, bloque }) {
   return (
     <Layout pagina="Inicio">
       <main className="contenedor">
@@ -15,20 +16,29 @@ export default function Home({ buzos }) {
           })}
         </div>
       </main>
+      <Bloque bloque={bloque} />
     </Layout>
   );
 }
 
 export async function getStaticProps() {
-  const url = `${process.env.API_URL}/api/buzos?populate=*`;
-  const respuesta = await fetch(url);
-  const buzos = await respuesta.json();
+  const urlBuzos = `${process.env.API_URL}/api/buzos?populate=*`;
+  const urlBloque = `${process.env.API_URL}/api/bloque?populate=*`;
 
-  console.log(buzos);
+  const [resBuzos, resBloque] = await Promise.all([
+    fetch(urlBuzos),
+    fetch(urlBloque),
+  ]);
+
+  const [buzos, bloque] = await Promise.all([
+    resBuzos.json(),
+    resBloque.json(),
+  ]);
 
   return {
     props: {
       buzos: buzos.data,
+      bloque: bloque.data,
     },
   };
 }
