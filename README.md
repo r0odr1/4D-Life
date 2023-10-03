@@ -24,7 +24,7 @@ git clone https://github.com/r0odr1/4D-Life.git
   ```
 2. Navigate to the project directory:
 ```shell
-cd front-app-restaurant
+cd 4d
  ```
 3. Install the dependencies:
 ```shell
